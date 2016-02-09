@@ -5,7 +5,7 @@ import time
 import Adafruit_CharLCD as LCD
 
 
-# Initialize the LCD using the pins 
+# Initialize the LCD using the pins
 lcd = LCD.Adafruit_CharLCDPlate()
 
 # create some custom characters
@@ -21,45 +21,45 @@ lcd.create_char(7, [31, 17, 21, 21, 21, 21, 17, 31])
 lcd.set_color(1.0, 0.0, 0.0)
 lcd.clear()
 lcd.message('RED \x01')
-time.sleep(3.0)
+time.sleep(1.0)
 
 lcd.set_color(0.0, 1.0, 0.0)
 lcd.clear()
 lcd.message('GREEN \x02')
-time.sleep(3.0)
+time.sleep(1.0)
 
 lcd.set_color(0.0, 0.0, 1.0)
 lcd.clear()
 lcd.message('BLUE \x03')
-time.sleep(3.0)
+time.sleep(1.0)
 
 lcd.set_color(1.0, 1.0, 0.0)
 lcd.clear()
 lcd.message('YELLOW \x04')
-time.sleep(3.0)
+time.sleep(1.0)
 
 lcd.set_color(0.0, 1.0, 1.0)
 lcd.clear()
 lcd.message('CYAN \x05')
-time.sleep(3.0)
+time.sleep(1.0)
 
 lcd.set_color(1.0, 0.0, 1.0)
 lcd.clear()
 lcd.message('MAGENTA \x06')
-time.sleep(3.0)
+time.sleep(1.0)
 
 lcd.set_color(1.0, 1.0, 1.0)
 lcd.clear()
 lcd.message('WHITE \x07')
-time.sleep(3.0)
+time.sleep(1.0)
 
 # Show button state.
 lcd.clear()
 lcd.message('Press buttons...')
 
 # Make list of button value, text, and backlight color.
-buttons = ( (LCD.SELECT, 'You hit Select... good job', (1,1,1)),
-            (LCD.LEFT,   'Left-side... Strong side'  , (1,0,0)),
+buttons = ( (LCD.SELECT, 'You hit Select...good job', (1,1,1)),
+            (LCD.LEFT,   'Left-side...Strong side'  , (1,0,0)),
             (LCD.UP,     'Things is looking Up'    , (0,0,1)),
             (LCD.DOWN,   'Whats going Down homie?!'  , (0,1,0)),
             (LCD.RIGHT,  'That ain\'t Right...' , (1,0,1)) )
@@ -72,6 +72,5 @@ while True:
 			# Button is pressed, change the message and backlight.
 			lcd.clear()
 			lcd.message(button[1])
-			lcd.set_color(button[3][0], button[2][1], button[2][2])
-			print 'button[0]'
-
+			lcd.set_color(button[2][0], button[2][1], button[2][2])
+			#print 'Button was pushed: %s ' % button[2]
